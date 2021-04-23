@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="central_block">
+		<div class="container">
+			<div class="row">
+				<div class="block_style_2">
+					<div class="left-top">{{ event.title }}</div>
+					<div class="title-text">{{ event.event_date }} || {{ event.event_time }}</div>
+					<div class="block_img">
+						<figure class="fig">
+							<img src="{{ event.photo.url }}">
+							<figcaption>{{ event.title }}</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="block_style_2">
+                    <div class="right-top">{{ event.title }}</div>
+                    <div class="title-text">{{ event.event_date }} || {{ event.event_time }}</div>
+                    <div class="text-style_2">
+                        {{ event.description }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

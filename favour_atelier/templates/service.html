@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="central_block">
+		<div class="container">
+			<div class="row">
+				<div class="block_style_2">
+					<div class="left-top">{{ favor.title }}</div>
+					<div class="title-text">{{ favor.title }}</div>
+					<div class="block_img">
+						<figure class="fig">
+							<img src="{{ favor.photo.url }}">
+							<figcaption>Цена: {{ favor.price }} &#8372;</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="block_style_2">
+                    <div class="right-top">{{ favor.title }}</div>
+                    <div class="title-text">{{ favor.title }}</div>
+                    <div class="text-style_2">
+                        {{ favor.description }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

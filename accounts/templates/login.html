@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+ <div class="central_block">
+		<div class="container">
+			<div class="row">
+                <div class="block_style_2">
+                    <div class="right-top">Войти в ситстему</div>
+                    <div class="title-text">{{ favor.title }}</div>
+                    <div class="text-style_2">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <input type="submit" value="Войти">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

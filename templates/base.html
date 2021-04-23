@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "css/normalize.css" %}"/>
+    <!-- Bootstrap CSS -->
+    <title>GOOD JOB</title>
+</head>
+<body>
+<!-- Header -->
+
+<header class="header" id="nav-start">
+    <div class="header_container">
+        <div class="header__inner">
+            <div class="logo">
+                <a href="#footer-end">
+                    <img src="/static/logo.png">
+                </a>
+            </div>
+            <nav class="header__menu">
+                <div class="btn__menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <ul class="menu__list">
+                    <li><a href="/">ГЛАВНАЯ</a></li>
+                    <li><a href="/#second_section">УСЛУГИ</a></li>
+                    <li><a href="/#third_section">МЕРОПРИЯТИЯ</a></li>
+                    <li><a href="/users_messages/view/">СООБЩЕНИЯ</a></li>
+                    <li><a href=""></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!-- Content -->
+{% block content %}
+{% endblock %}
+
+<!-- Footer -->
+
+<footer class="footer" id="footer-end">
+    <div class="footer_container">
+        <div class="footer__inner">
+            <div class="footer__logo-part">
+                <a href="#nav-start" class="footer__logo-link">
+                    <img src="/static/logo.png">
+                </a>
+                <div class="footer__about-text">
+                    <br>2021 &#169 Atelier "GOOD JOB"<br>Де твоя лінія Маннергейма?
+                </div>
+            </div>
+            <div class="footer__menu-part">
+                <div class="footer__title">Knowledge Base</div>
+                <ul class="footer_list-links">
+                    <li class="footer__link"><a href="#">Tutorials</a></li>
+                    <li class="footer__link"><a href="#">Get Paid to Write</a></li>
+                    <li class="footer__link"><a href="#">Questions</a></li>
+                    <li class="footer__link"><a href="#">Meetups</a></li>
+                    <li class="footer__link"><a href="#">Referral Program</a></li>
+                    <li class="footer__link"><a href="#">Shop</a></li>
+                    <li class="footer__link"><a href="#">Droplets for Demos</a></li>
+                </ul>
+            </div>
+            <div class="footer__menu-part">
+                <div class="footer__title">Company</div>
+                <ul class="footer_list-links">
+                    <li class="footer__link"><a href="#">Hosting.com Blog</a></li>
+                    <li class="footer__link"><a href="#">About Us</a></li>
+                    <li class="footer__link"><a href="#">Contact Us</a></li>
+                    <li class="footer__link"><a href="#">Terms & Conditions</a></li>
+                    <li class="footer__link"><a href="#"> Affiliate Terms & Conditions</a></li>
+                    <li class="footer__link"><a href="#">Shop</a></li>
+                    <li class="footer__link"><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer__form-part">
+                <div class="footer__title">Quick Contact</div>
+                <form name="sendMessage" class="footer__col-form" novalidate action="" method="post" autocomplete="off">
+                    {% csrf_token %}
+                    <div class="footer__col-form-name">{{ form.user_name }}</div>
+                    <div class="footer__col-form-email">{{ form.user_email }}</div>
+                    <div class="footer__col-form-message">{{ form.message }}</div>
+                    <button type="submit" class="footer__col-form-btn">ОТПРАВИТЬ</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

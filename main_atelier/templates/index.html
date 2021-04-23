@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{%  block content %}
+<body>
+	<!-- Block Categories -->
+    {% for item in categories %}
+    {% for favor in item.service %}
+	<div class="central_block">
+		<div class="container">
+			<div class="row">
+				<div class="block_style_1">
+					<div class="left-top">{{ item.title }}</div>
+					<div class="title-text"><a href="/favour/{{ favor.pk }}">{{ favor.title }}</a></div>
+					<div class="block_img">
+						<figure class="fig">
+							<img src="{{ favor.photo.url }}">
+							<figcaption>Цена: {{ favor.price }} &#8372;</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="block_style_1">
+                    <div class="right-top">{{ item.title }}</div>
+                    <div class="title-text"><a href="/favour/{{ favor.pk }}">{{ favor.title }}</a></div>
+                    <div class="text-style_1">
+                        {{ favor.description }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endfor %}
+	<!-- Block Special Menu -->
+    {% for item in special_categories %}
+    {% for favor in item.service %}
+	<div class="central_block" id="second_section">
+		<div class="container">
+			<div class="row">
+				<div class="block_style_2">
+					<div class="left-top">{{ item.title }}</div>
+					<div class="title-text">{{ favor.title }}</div>
+					<div class="block_img">
+						<figure class="fig">
+							<img src="{{ favor.photo.url }}">
+							<figcaption>Стоимость: {{ favor.price }} &#8372;</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="block_style_2">
+                    <div class="right-top">{{ item.title }}</div>
+                    <div class="title-text">{{ favor.title }}</div>
+                    <div class="text-style_2">
+                        {{ favor.description }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endfor %}
+	<!-- Block Events -->
+    {% for item in events %}
+	<div class="central_block" id="third_section">
+		<div class="container">
+			<div class="row">
+				<div class="block_style_1">
+                    <div class="title-text"><a href="/events/{{ item.pk }}">{{ item.title }}</a> &mdash; мероприятие</div>
+					<div class="title-text">{{ item.event_date }} || {{ item.event_time }}</div>
+					<div class="block_img">
+						<figure class="fig">
+							<img src="{{ item.photo.url }}">
+							<figcaption>{{ item.title }}</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+</html>
+{% endblock %}
